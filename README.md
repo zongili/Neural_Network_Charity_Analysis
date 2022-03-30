@@ -25,6 +25,7 @@ Features are all the columns in the dataset excluding the output/target column a
 Using features that has too many unique values ie the columns below. EIN                       34299
 NAME                      19568
 These columns should be dropped because One-Hot Encoding becomes a big problem in such a case since we have a separate column for each unique value in the categorical variable. In one of the cases 'NAME' column created in total over 19 thousand columns. Also in some columns column contains a lot of “repeats” in its data range ie. 'SPECIAL_CONSIDERATIONS','STATUS' columns in the dataset. I dropped the high and low cardinality values and then run the One-Hot Encoding to be able to optimize the model.
+
 __Compiling, Training, and Evaluating the Model__
 - How many neurons, layers, and activation functions did you select for your neural network model, and why?
 I used different number of neurons for different tests as seen in the .html files I added. There is no concreate rule to use of number of neurons but I tried 2/3 of the features as number of neurons for the first layer and less than half of it for the second layer. In the submitted solution I used 2 layers, 25, 10  neurons for each respective layer. Activation functions are 'relu' for the layers and 'sigmoid for the output layer. 
@@ -38,7 +39,6 @@ The image below shows the Keras model used for the Alphabet Soup funding. It sum
 ![This image shows a different optimization](images/optimize.png)
 
 ## Summary: 
-__Summary of the results:__ 
 In summary the Keras model I used with different optimizations using relu activation, adam optimizer, binary cressentropy for the loss function, 250 and 100 epochs, 1321 parameters, with high and low number of neurons resulted in similar evaluation of the model with the test data. In some cases the training data was able to achieve over 95% accuracy but the test data evaluation was about only 56% which suggested that the training caused overfitting the data. The overall results of the deep learning model showed me that NN needs lots of computation and time and trying different optimizations.
 
 __Recommendation:__
